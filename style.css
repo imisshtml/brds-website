@@ -827,8 +827,7 @@ body {
 
 /* Footer */
 .footer {
-    border-top: 1px solid var(--border-color);
-    padding: 5rem 2rem 2rem;
+    padding: 0rem 2rem 2rem;
     background: #f1f5f9;
 }
 
@@ -872,7 +871,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
-    padding-top: 2rem;
+    padding-top: 1rem;
     border-top: 1px solid #e2e8f0;
     color: var(--text-secondary);
     font-size: 0.85rem;
