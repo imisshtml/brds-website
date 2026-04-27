@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security &amp; HIPAA Compliance | BRDS Care</title>
+    <meta name="description"
+        content="Learn how BRDS Care protects your data and aligns with HIPAA requirements. Our platform is built with a security-first mindset for ABA and IDD care providers.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .policy-page {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 8rem 2rem 6rem;
+        }
+
+        .policy-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--brand-cyan);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 2.5rem;
+            transition: var(--transition-standard);
+        }
+
+        .policy-back:hover { color: var(--brand-blue); }
+
+        .policy-header {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .policy-badge {
+            display: inline-block;
+            background: var(--accent-teal);
+            color: var(--brand-cyan);
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 0.3rem 0.85rem;
+            border-radius: 100px;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .policy-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .policy-meta {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Security pillar cards */
+        .security-pillars {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+            margin: 2.5rem 0 3.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .security-pillars { grid-template-columns: 1fr; }
+        }
+
+        .pillar-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .pillar-icon {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        .pillar-card h3 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.35rem;
+        }
+
+        .pillar-card p {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Section styles */
+        .sec-section {
+            margin-bottom: 2.75rem;
+            padding-bottom: 2.75rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .sec-section:last-of-type { border-bottom: none; }
+
+        .sec-section h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+        }
+
+        .sec-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: var(--accent-teal);
+            color: var(--brand-cyan);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .sec-section p {
+            color: var(--text-secondary);
+            font-size: 0.97rem;
+            line-height: 1.8;
+            margin-bottom: 0.85rem;
+        }
+
+        .sec-section ul {
+            margin: 0.5rem 0 0 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.55rem;
+        }
+
+        .sec-section ul li {
+            color: var(--text-secondary);
+            font-size: 0.97rem;
+            line-height: 1.7;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+        }
+
+        .sec-section ul li::before {
+            content: '✓';
+            color: var(--brand-cyan);
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-top: 0.2rem;
+            flex-shrink: 0;
+        }
+
+        .sec-section strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Highlight box */
+        .sec-highlight {
+            background: linear-gradient(135deg, rgba(13,148,136,0.07), rgba(37,99,235,0.05));
+            border: 1px solid rgba(13,148,136,0.2);
+            border-radius: 12px;
+            padding: 1.75rem 2rem;
+            margin: 2rem 0;
+        }
+
+        .sec-highlight p {
+            margin: 0;
+            color: var(--text-secondary);
+            font-size: 0.97rem;
+            line-height: 1.8;
+        }
+
+        .sec-highlight strong { color: var(--brand-cyan); }
+
+        /* Contact box */
+        .policy-contact-box {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.75rem 2rem;
+            margin-top: 1rem;
+        }
+
+        .policy-contact-box h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .policy-contact-box p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0;
+            line-height: 1.7;
+        }
+
+        .policy-contact-box a {
+            color: var(--brand-cyan);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .policy-contact-box a:hover { text-decoration: underline; }
+
+        .policy-footer-note {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="brand">
+                <img src="brds-logo.png" alt="BRDS Logo" class="brand-logo-img" onerror="this.style.display='none'">
+                <span class="brand-name">BRDS</span>
+            </a>
+            <div class="nav-actions">
+                <a href="https://l2.brds.care" class="btn-ghost" style="color:#2563eb; font-weight:600;">Log In</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="policy-page">
+        <a href="index.html" class="policy-back">← Back to BRDS Home</a>
+
+        <div class="policy-header">
+            <div class="policy-badge">Security &amp; Compliance</div>
+            <h1>Security &amp; HIPAA Compliance</h1>
+            <p class="policy-meta">Last Updated: April 27, 2026 &nbsp;|&nbsp; BRDS Care — a product of imisshtml LLC</p>
+        </div>
+
+        <div class="sec-highlight">
+            <p>We take the privacy and security of sensitive information seriously and design our platform with a
+                <strong>security-first mindset</strong>. Our system is built to align with the requirements of the Health
+                Insurance Portability and Accountability Act (HIPAA), ensuring that Protected Health Information (PHI)
+                is handled with care, integrity, and confidentiality.</p>
+        </div>
+
+        <!-- Three pillars overview -->
+        <div class="security-pillars">
+            <div class="pillar-card">
+                <span class="pillar-icon">🔒</span>
+                <h3>HIPAA-Aligned</h3>
+                <p>Designed to support PHI handling, access controls, and compliance requirements.</p>
+            </div>
+            <div class="pillar-card">
+                <span class="pillar-icon">🛡️</span>
+                <h3>Encrypted</h3>
+                <p>Data encrypted in transit (HTTPS/TLS) and at rest using industry standards.</p>
+            </div>
+            <div class="pillar-card">
+                <span class="pillar-icon">👤</span>
+                <h3>On-Staff Officer</h3>
+                <p>Dedicated HIPAA-Compliance Security Officer overseeing our program.</p>
+            </div>
+        </div>
+
+        <!-- Section 1 -->
+        <div class="sec-section">
+            <h2><span class="sec-icon">🏥</span> HIPAA-Aligned Architecture</h2>
+            <p>We follow best practices outlined under the Health Insurance Portability and Accountability Act and its
+                associated security and privacy requirements. Our platform is designed to support:</p>
+            <ul>
+                <li>Secure handling of Protected Health Information (PHI)</li>
+                <li>Role-based access controls</li>
+                <li>Data minimization principles</li>
+                <li>Controlled data environments depending on deployment mode</li>
+            </ul>
+            <p style="margin-top:1rem;">We offer flexible deployment models, including configurations where sensitive
+                data can remain fully local to client devices when required.</p>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="sec-section">
+            <h2><span class="sec-icon">🔐</span> Data Protection &amp; Encryption</h2>
+            <p>We implement industry-standard safeguards to protect data, including:</p>
+            <ul>
+                <li>Encryption of data in transit using HTTPS/TLS</li>
+                <li>Encryption of sensitive data at rest (where applicable)</li>
+                <li>Secure storage mechanisms on client devices for local data handling</li>
+                <li>Strict separation between identifiable and non-identifiable data</li>
+            </ul>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="sec-section">
+            <h2><span class="sec-icon">🎛️</span> Access Controls</h2>
+            <p>We enforce strict access management practices across the entire platform:</p>
+            <ul>
+                <li>Authentication and authorization controls</li>
+                <li>Principle of least privilege</li>
+                <li>Session security and timeout controls</li>
+            </ul>
+            <p style="margin-top:1rem;">Only authorized users are permitted to access sensitive information, and access
+                is limited to what is necessary for their role.</p>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="sec-section">
+            <h2><span class="sec-icon">🚫</span> No Unauthorized Data Sharing</h2>
+            <p>We do not sell, rent, or share Protected Health Information. Any use or disclosure of PHI is strictly
+                limited to authorized purposes and governed by applicable agreements, including
+                <strong>Business Associate Agreements (BAAs)</strong> where required.</p>
+        </div>
+
+        <!-- Section 5 -->
+        <div class="sec-section">
+            <h2><span class="sec-icon">💻</span> Client-Controlled Data Options</h2>
+            <p>For organizations requiring additional control, we support configurations where:</p>
+            <ul>
+                <li>Sensitive data remains stored locally on client-managed devices</li>
+                <li>No PHI is transmitted to or stored on our servers</li>
+                <li>Clients retain full control over patient-identifiable information during pilot or limited-use
+                    scenarios</li>
+            </ul>
+        </div>
+
+        <!-- Section 6 -->
+        <div class="sec-section">
+            <h2><span class="sec-icon">🏗️</span> Vendor &amp; Infrastructure Security</h2>
+            <p>When PHI is processed within our hosted environment, we work with trusted infrastructure providers that
+                support HIPAA compliance. We execute <strong>Business Associate Agreements (BAAs)</strong> with all
+                applicable vendors as required, ensuring your data remains protected at every layer of the stack.</p>
+        </div>
+
+        <!-- Section 7 -->
+        <div class="sec-section">
+            <h2><span class="sec-icon">🔄</span> Ongoing Security Practices</h2>
+            <p>We continuously improve our security posture through:</p>
+            <ul>
+                <li>Internal security reviews and risk assessments</li>
+                <li>Monitoring and logging of system activity (non-PHI environments)</li>
+                <li>Secure development practices</li>
+                <li>Regular updates and patch management</li>
+            </ul>
+        </div>
+
+        <!-- Section 8 -->
+        <div class="sec-section">
+            <h2><span class="sec-icon">🤝</span> Responsibility &amp; Transparency</h2>
+            <p>We partner with our clients to ensure compliance responsibilities are clearly defined. While our platform
+                is designed to support HIPAA requirements, <strong>proper configuration and usage by the client</strong>
+                are also essential to maintaining compliance.</p>
+            <p>We welcome compliance reviews and are available to provide documentation or answer questions about our
+                security posture at any time.</p>
+        </div>
+
+        <!-- Contact box -->
+        <div class="policy-contact-box">
+            <h3>Questions or Compliance Documentation Requests?</h3>
+            <p>If you have questions about our security practices, need a Business Associate Agreement (BAA), or
+                require documentation for a compliance review, please reach out to our security team:</p>
+            <p style="margin-top:0.75rem;">
+                <strong>imisshtml LLC — BRDS Care Security Team</strong><br>
+                Email: <a href="mailto:info@imisshtml.com">info@imisshtml.com</a><br>
+                Website: <a href="https://brds.care">brds.care</a>
+            </p>
+        </div>
+
+        <p class="policy-footer-note">
+            &copy; 2026 imisshtml LLC. All rights reserved. BRDS Care is a product of imisshtml LLC. |
+            <a href="privacy.html" style="color:inherit; text-decoration:underline;">Privacy Policy</a>
+        </p>
+    </main>
+
+</body>
+
+</html>
